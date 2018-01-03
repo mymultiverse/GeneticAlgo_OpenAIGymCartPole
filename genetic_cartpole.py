@@ -9,7 +9,7 @@ from statistics import median, mean
 env = gym.make('CartPole-v2')
 
 award_set =[]
-nn_out =[]
+
 test_run = 15
 
 best_gen =[]
@@ -31,7 +31,7 @@ def intial_gen(test_run):
 	input_bias = []
 
 	hidden_weight = []
-	out_weight = [] #out
+	out_weight = [] 
 
 	in_node = 4   # 4,2 combinatin good 
 	hid_node = 2
