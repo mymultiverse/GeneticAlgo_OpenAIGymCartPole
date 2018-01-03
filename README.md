@@ -1,5 +1,5 @@
 # GeneticAlgo_OpenAIGymCartPole
-Genetic Algorithm is so powerful that model learns very fast. Most of cases it perform perfect during testing. If we do not end environment it will hold pole for forever. I run environment upto 10000 time steps :D . 
+Genetic Algorithm is so powerful that model learns very fast. Most of the cases it performs perfectly during testing may be due to search space is not that large compared to other environments. If we do not end environment it will hold the pole for forever. I run environment up to 10000-time steps :D .
 
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/genetic_cart.gif)
 
