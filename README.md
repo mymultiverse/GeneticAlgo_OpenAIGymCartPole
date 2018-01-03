@@ -9,6 +9,7 @@ Complete version
 
 Results from Three Layer Neural Network
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/updated.png)
+![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/new_result.png)
 
 Results from Two Layer Neural Network
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/score_vs_gen.png)
