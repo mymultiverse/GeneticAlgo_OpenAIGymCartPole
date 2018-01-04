@@ -33,7 +33,7 @@ def intial_gen(test_run):
 	hidden_weight = []
 	out_weight = [] 
 
-	in_node = 4   # 4,2 combinatin good 
+	in_node = 4   # 4,2 combination good 
 	hid_node = 2
 
 	for i in range(test_run):
@@ -57,7 +57,8 @@ def intial_gen(test_run):
 
 def nn(obs,in_w,in_b,hid_w,out_w):
 
-	obs = np.reshape(obs,(1,4))
+	#obs = np.reshape(obs,(1,4))
+	obs = np.array(obs).reshape(1,len(obs))
 	#obs = obs/np.max(obs) 
 
 	Ain = reLu(np.dot(obs,in_w)+in_b.T)
