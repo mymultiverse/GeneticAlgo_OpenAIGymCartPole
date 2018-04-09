@@ -25,7 +25,7 @@ def sigmoid(x):
 def reLu(x):
 	return np.maximum(0,x)
 
-
+# Function generate initial set of weights and bias
 def intial_gen(test_run):
 	input_weight = []
 	input_bias = []
@@ -55,6 +55,7 @@ def intial_gen(test_run):
 
 
 
+# creat a neural network 
 def nn(obs,in_w,in_b,hid_w,out_w):
 
 	#obs = np.reshape(obs,(1,4))
@@ -89,7 +90,7 @@ def run_env(env,in_w,in_b,hid_w,out_w):
 			break
 	return award
 
-
+#Run environment randomly 
 def rand_run(env,test_run):
 	award_set = []
 	generations = intial_gen(test_run)
@@ -131,6 +132,7 @@ def crossover(Dna_list):
 
 	return newDNA_list
 
+#Generate new set of weigts and bias from the best previous weights and bias
 
 def reproduce(award_set, generations):
 
