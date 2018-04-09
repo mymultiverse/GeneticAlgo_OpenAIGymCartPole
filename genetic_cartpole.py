@@ -149,6 +149,8 @@ def reproduce(award_set, generations):
 
 	new_award_set = []
 
+	
+	#Extraction of all weight info into a single sequence
 	for index in good_award_idx:
 		
 		w1 = generations[0][index]
