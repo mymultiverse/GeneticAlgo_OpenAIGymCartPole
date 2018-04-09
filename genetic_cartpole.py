@@ -69,7 +69,7 @@ def nn(obs,in_w,in_b,hid_w,out_w):
 
 	out_put = reLu(np.dot(Ahid,out_w))
 
-	nn_out.append(out_put)
+	#nn_out.append(out_put)
 
 	if out_put  < 0.9002: #(this should be close to < 1(3,2)layers # <0.90001 4,2 layers
 		out_put = 0
