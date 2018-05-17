@@ -64,23 +64,29 @@ def intial_gen(test_run):
 def nn(obs,in_w,in_b,hid_w,out_w):
 
 	#obs = np.reshape(obs,(1,4))
-	obs = np.array(obs).reshape(1,len(obs))
-	#obs = obs/np.max(obs) 
-
-	Ain = reLu(np.dot(obs,in_w)+in_b.T)
+	#obs = np.array(obs).reshape(1,len(obs))
+	
 	#hid_layer = np.dot(Ain,hid_w)
 	#Ahid = sigmoid(np.dot(Ain,hid_w))
+	obs = obs/max(np.max(obs),1) 
+
+	Ain = reLu(np.dot(obs,in_w)+in_b.T)
+	
 	Ahid = reLu(np.dot(Ain,hid_w))
+	lhid = np.dot(Ahid,out_w)
+	
+	out_put = reLu(lhid)
+	out_put = softmax(out_put)
+	out_put = out_put.argsort().reshape(1,adim)
+	
+	#Ahid = reLu(np.dot(Ain,hid_w))
+	#out_put = reLu(np.dot(Ahid,out_w))
+	#if out_put  < 0.9002: #(this should be close to < 1(3,2)layers # <0.90001 4,2 layers
+	#	out_put = 0
+	#else:
+	#	out_put = 1
 
-	out_put = reLu(np.dot(Ahid,out_w))
-
-	#nn_out.append(out_put)
-
-	if out_put  < 0.9002: #(this should be close to < 1(3,2)layers # <0.90001 4,2 layers
-		out_put = 0
-	else:
-		out_put = 1
-
+	out_action = out_put[0][0]
 	return out_put
 
 def run_env(env,in_w,in_b,hid_w,out_w):
