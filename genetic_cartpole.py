@@ -87,6 +87,8 @@ def nn(obs,in_w,in_b,hid_w,out_w):
 	#	out_put = 1
 
 	out_action = out_put[0][0]
+	
+	#act = [out_put.item(i) for i in range(len(out_put))] #continues action
 	return out_put
 
 def run_env(env,in_w,in_b,hid_w,out_w):
