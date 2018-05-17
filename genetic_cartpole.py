@@ -8,11 +8,16 @@ from statistics import median, mean
 
 env = gym.make('CartPole-v2')
 
+ind = env.observation_space.shape[0]
+adim = env.action_space.n #discrete
+
+#adim = env.action_space.shape[0] #box type
+
+
 award_set =[]
-
 test_run = 15
-
 best_gen =[]
+
 
 
 def lreLu(x):
@@ -37,7 +42,7 @@ def intial_gen(test_run):
 	hid_node = 2
 
 	for i in range(test_run):
-		in_w = np.random.rand(4,in_node)
+		in_w = np.random.rand(ind,in_node)
 		input_weight.append(in_w)
 
 		in_b = np.random.rand((in_node))
@@ -47,7 +52,7 @@ def intial_gen(test_run):
 		hidden_weight.append(hid_w)
 
 
-		out_w = np.random.rand(hid_node, 1)
+		out_w = np.random.rand(hid_node, adim)
 		out_weight.append(out_w)
 	
 	generation = [input_weight, input_bias, hidden_weight, out_weight]
