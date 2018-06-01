@@ -11,7 +11,7 @@ env = gym.make('CartPole-v2')
 ind = env.observation_space.shape[0]
 adim = env.action_space.n #discrete
 
-#adim = env.action_space.shape[0] #box type
+#adim = env.action_space.shape[0] # continues
 
 
 award_set =[]
@@ -81,7 +81,9 @@ def nn(obs,in_w,in_b,hid_w,out_w):
 	out_put = softmax(out_put)
 	out_put = out_put.argsort().reshape(1,adim)
 
-	out_action = out_put[0][0]
+	out_action = out_put[0][0] # index of discrete action
+	
+	#out_action = out_put.reshape(adim) # Vector of continues actions
 	
 	#act = [out_put.item(i) for i in range(len(out_put))] #continues action
 	return out_put
