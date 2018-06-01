@@ -229,6 +229,7 @@ def evolution(env,test_run,n_of_generations):
 	plt.plot(A)
 	plt.xlabel('generations')
 	plt.ylabel('score')
+	plt.grid()
 
 	print('Average accepted score:',mean(A))
 	print('Median score for accepted scores:',median(A))
