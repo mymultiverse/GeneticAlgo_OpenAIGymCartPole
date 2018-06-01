@@ -68,7 +68,9 @@ def nn(obs,in_w,in_b,hid_w,out_w):
 	
 	#hid_layer = np.dot(Ain,hid_w)
 	#Ahid = sigmoid(np.dot(Ain,hid_w))
-	obs = obs/max(np.max(obs),1) 
+	#obs = obs/max(np.max(obs),1)
+	
+	obs = obs/max(np.max(np.linalg.norm(obs)),1) 
 
 	Ain = reLu(np.dot(obs,in_w)+in_b.T)
 	
