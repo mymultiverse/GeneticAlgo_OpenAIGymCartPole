@@ -18,7 +18,9 @@ award_set =[]
 test_run = 15
 best_gen =[]
 
-
+def softmax(x):
+	x = np.exp(x)/np.sum(np.exp(x))
+	return x
 
 def lreLu(x):
 	alpha=0.2
