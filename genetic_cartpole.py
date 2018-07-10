@@ -82,13 +82,13 @@ def nn(obs,in_w,in_b,hid_w,out_w):
 	out_put = reLu(lhid)
 	out_put = softmax(out_put)
 	out_put = out_put.argsort().reshape(1,adim)
-
-	out_action = out_put[0][0] # index of discrete action
+	act = out_put[0][0] #index of discrete action
 	
-	#out_action = out_put.reshape(adim) # Vector of continues actions
+	# Continues actions
+	# out_put = 2*np.tanh(np.dot(Ahid,out_w))
+	#act = out_put.reshape(adim) # Vector of continues actions
 	
-	#act = [out_put.item(i) for i in range(len(out_put))] #continues action
-	return out_put
+	return act
 
 def run_env(env,in_w,in_b,hid_w,out_w):
 	obs = env.reset()
