@@ -1,4 +1,17 @@
-# GeneticAlgo_OpenAIGymCartPole
+# Dependencies
+* [Open AI Gym library](https://github.com/openai/gym#installation)
+* numpy
+* matplotlib
+
+Use [pip](https://pypi.org/project/pip/) to install any missing dependencies
+
+# Uses
+Clone or download repository. Inside repo. run
+```markdown
+python genetic_cartpole.py
+```
+
+# Explaination 
 Genetic Algorithm is so powerful that model learns very fast. Most of the cases it performs perfectly during testing may be due to search space is not that large compared to other environments. If we do not end environment it will hold the pole for forever. I run environment up to 10000-time steps :D . Time limit to run env can be changed as mentioned [here](https://github.com/openai/gym/issues/463). 
 
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/genetic_cart.gif)
@@ -18,10 +31,6 @@ Initially, this weights and biases randomly selected then for each selection the
 
 Exchange point can be anywhere as it is chosen randomly. After crossover mutation is done which is also a random update of few of the dots as a brown dot and a red dot become blue and black respectively after mutation. These new generated along with parent DNAs(weights-biases) put inside the neural network and again see the scores from each and then loop-over the evolution process of genetic algorithm again until perfect score achieved.
 
-
-
-
-
 Results from Three Layer Neural Network
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/updated.png)
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/new_result.png)
@@ -29,6 +38,7 @@ Results from Three Layer Neural Network
 Results from Two Layer Neural Network
 ![](https://github.com/mymultiverse/GeneticAlgo_OpenAIGymCartPole/blob/master/score_vs_gen.png)
 
-References:-
+
+# Reference:-
 OpenAI [Gym](https://gym.openai.com/docs/)
 
