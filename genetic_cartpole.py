@@ -199,6 +199,7 @@ def reproduce(award_set, generations):
 
 		sl = newdna_in_w1.size + new_in_b.size + newdna_in_w2.size
 		new_out_w   = np.array([newdna[sl:]]).T
+		new_out_w = np.reshape(new_out_w, (-1,generations[3][0].shape[1]))
 		new_output_weight.append(new_out_w)
 
 		new_award = run_env(env, new_in_w, new_in_b, new_hid_w, new_out_w) #bias
